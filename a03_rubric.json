@@ -1,0 +1,409 @@
+{
+  "assignment": "A03",
+  "description": "Loops and Patterns",
+  "total_points": 65,
+  "problem_naming": {
+    "Grade Report": ["grade_report.py", "grades.py", "gradereport.py", "grade.py", "report.py"],
+    "Expense Tracker": ["expense_tracker.py", "expenses.py", "expensetracker.py", "expense.py", "tracker.py"],
+    "Inventory Manager": ["inventory_manager.py", "inventory.py", "inventorymanager.py", "products.py"],
+    "Playlist Analyzer": ["playlist_analyzer.py", "playlist.py", "playlistanalyzer.py", "music.py", "songs.py"],
+    "Contact Cleaner": ["contact_cleaner.py", "contacts.py", "contactcleaner.py", "cleaner.py", "contact.py"],
+    "Survey Results": ["survey_results.py", "survey.py", "surveyresults.py", "results.py", "ratings.py"],
+    "Workout Log": ["workout_log.py", "workout.py", "workoutlog.py", "fitness.py", "exercise.py"],
+    "Order Processor": ["order_processor.py", "orders.py", "orderprocessor.py", "order.py", "ecommerce.py"]
+  },
+  "problem_rubrics": {
+    "Grade Report": {
+      "content_checks": [
+        {
+          "field": "I/P/O comment block",
+          "regexes": [
+            "'''[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*'''",
+            "\"\"\"[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*\"\"\""
+          ],
+          "points": 3
+        },
+        {
+          "field": "for loop present",
+          "regexes": ["\\bfor\\b\\s+\\w+\\s+\\bin\\b"],
+          "points": 0,
+          "warn_only": true,
+          "warn_message": "No for loop detected. This assignment requires at least one for loop."
+        },
+        {
+          "field": "list or dict usage",
+          "regexes": ["\\[|\\{|append|dict|list"],
+          "points": 0,
+          "warn_only": true,
+          "warn_message": "No list or dictionary detected. This assignment requires at least one collection."
+        }
+      ],
+      "test_cases": [
+        {
+          "label": "3 students with varied scores",
+          "inputs": "3\nAlice\n92\nBob\n78\nCarol\n95\n",
+          "expected_output": "(?i)(average|avg|mean).*\\d",
+          "points": 3,
+          "type": "output_check"
+        },
+        {
+          "label": "highest score in output",
+          "inputs": "3\nAlice\n92\nBob\n78\nCarol\n95\n",
+          "expected_output": "(?i)(high|max|best|top).*(?:carol|95)",
+          "points": 3,
+          "type": "output_check"
+        },
+        {
+          "label": "runs with 1 student",
+          "inputs": "1\nEve\n85\n",
+          "expected_output": ".+",
+          "points": 2,
+          "type": "output_check"
+        }
+      ]
+    },
+    "Expense Tracker": {
+      "content_checks": [
+        {
+          "field": "I/P/O comment block",
+          "regexes": [
+            "'''[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*'''",
+            "\"\"\"[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*\"\"\""
+          ],
+          "points": 3
+        },
+        {
+          "field": "for loop present",
+          "regexes": ["\\bfor\\b\\s+\\w+\\s+\\bin\\b"],
+          "points": 0,
+          "warn_only": true,
+          "warn_message": "No for loop detected."
+        },
+        {
+          "field": "list or dict usage",
+          "regexes": ["\\[|\\{|append|dict|list"],
+          "points": 0,
+          "warn_only": true,
+          "warn_message": "No list or dictionary detected."
+        }
+      ],
+      "test_cases": [
+        {
+          "label": "3 expenses with total",
+          "inputs": "3\nGroceries\n45.50\nGas\n30.00\nDining\n22.75\n",
+          "expected_output": "(?i)(total|sum).*\\d",
+          "points": 3,
+          "type": "output_check"
+        },
+        {
+          "label": "biggest expense in output",
+          "inputs": "3\nGroceries\n45.50\nGas\n30.00\nDining\n22.75\n",
+          "expected_output": "(?i)(big|larg|max|high|most).*(?:groceries|45)",
+          "points": 3,
+          "type": "output_check"
+        },
+        {
+          "label": "runs with 1 expense",
+          "inputs": "1\nCoffee\n5.50\n",
+          "expected_output": ".+",
+          "points": 2,
+          "type": "output_check"
+        }
+      ]
+    },
+    "Inventory Manager": {
+      "content_checks": [
+        {
+          "field": "I/P/O comment block",
+          "regexes": [
+            "'''[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*'''",
+            "\"\"\"[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*\"\"\""
+          ],
+          "points": 3
+        },
+        {
+          "field": "for loop present",
+          "regexes": ["\\bfor\\b\\s+\\w+\\s+\\bin\\b"],
+          "points": 0,
+          "warn_only": true,
+          "warn_message": "No for loop detected."
+        },
+        {
+          "field": "list or dict usage",
+          "regexes": ["\\[|\\{|append|dict|list"],
+          "points": 0,
+          "warn_only": true,
+          "warn_message": "No list or dictionary detected."
+        }
+      ],
+      "test_cases": [
+        {
+          "label": "3 products with values",
+          "inputs": "3\nPen\n2.99\n100\nNotebook\n8.50\n50\nBackpack\n45.00\n20\n",
+          "expected_output": "(?i)(total|value|worth|inventory).*\\d",
+          "points": 3,
+          "type": "output_check"
+        },
+        {
+          "label": "most expensive in output",
+          "inputs": "3\nPen\n2.99\n100\nNotebook\n8.50\n50\nBackpack\n45.00\n20\n",
+          "expected_output": "(?i)(expensive|high|max|most).*(?:backpack|45)",
+          "points": 3,
+          "type": "output_check"
+        },
+        {
+          "label": "runs with 1 product",
+          "inputs": "1\nWidget\n9.99\n10\n",
+          "expected_output": ".+",
+          "points": 2,
+          "type": "output_check"
+        }
+      ]
+    },
+    "Playlist Analyzer": {
+      "content_checks": [
+        {
+          "field": "I/P/O comment block",
+          "regexes": [
+            "'''[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*'''",
+            "\"\"\"[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*\"\"\""
+          ],
+          "points": 3
+        },
+        {
+          "field": "for loop present",
+          "regexes": ["\\bfor\\b\\s+\\w+\\s+\\bin\\b"],
+          "points": 0,
+          "warn_only": true,
+          "warn_message": "No for loop detected."
+        },
+        {
+          "field": "list or dict usage",
+          "regexes": ["\\[|\\{|append|dict|list"],
+          "points": 0,
+          "warn_only": true,
+          "warn_message": "No list or dictionary detected."
+        }
+      ],
+      "test_cases": [
+        {
+          "label": "3 songs with total time",
+          "inputs": "3\nSong A\n3.5\npop\nSong B\n4.2\nrock\nSong C\n2.8\npop\n",
+          "expected_output": "(?i)(total|playtime|duration|time|minutes).*\\d",
+          "points": 3,
+          "type": "output_check"
+        },
+        {
+          "label": "longest song in output",
+          "inputs": "3\nSong A\n3.5\npop\nSong B\n4.2\nrock\nSong C\n2.8\npop\n",
+          "expected_output": "(?i)(long|max|great).*(?:song b|4\\.2)",
+          "points": 3,
+          "type": "output_check"
+        },
+        {
+          "label": "runs with 1 song",
+          "inputs": "1\nOnly Song\n3.0\njazz\n",
+          "expected_output": ".+",
+          "points": 2,
+          "type": "output_check"
+        }
+      ]
+    },
+    "Contact Cleaner": {
+      "content_checks": [
+        {
+          "field": "I/P/O comment block",
+          "regexes": [
+            "'''[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*'''",
+            "\"\"\"[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*\"\"\""
+          ],
+          "points": 3
+        },
+        {
+          "field": "for loop present",
+          "regexes": ["\\bfor\\b\\s+\\w+\\s+\\bin\\b"],
+          "points": 0,
+          "warn_only": true,
+          "warn_message": "No for loop detected."
+        },
+        {
+          "field": "list or dict usage",
+          "regexes": ["\\[|\\{|append|dict|list"],
+          "points": 0,
+          "warn_only": true,
+          "warn_message": "No list or dictionary detected."
+        }
+      ],
+      "test_cases": [
+        {
+          "label": "3 contacts cleaned",
+          "inputs": "3\n  alice CHEN  \nalice@byu.edu\n  BOB smith\nbob@byu.edu\n carol JONES \ncarol@byu.edu\n",
+          "expected_output": "(?i)(clean|process|contact).*\\d|alice chen|Alice Chen",
+          "points": 3,
+          "type": "output_check"
+        },
+        {
+          "label": "title case in output",
+          "inputs": "3\n  alice CHEN  \nalice@byu.edu\n  BOB smith\nbob@byu.edu\n carol JONES \ncarol@byu.edu\n",
+          "expected_output": "Alice Chen|Bob Smith|Carol Jones",
+          "points": 3,
+          "type": "output_check"
+        },
+        {
+          "label": "runs with 1 contact",
+          "inputs": "1\njohn DOE\njohn@test.com\n",
+          "expected_output": ".+",
+          "points": 2,
+          "type": "output_check"
+        }
+      ]
+    },
+    "Survey Results": {
+      "content_checks": [
+        {
+          "field": "I/P/O comment block",
+          "regexes": [
+            "'''[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*'''",
+            "\"\"\"[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*\"\"\""
+          ],
+          "points": 3
+        },
+        {
+          "field": "for loop present",
+          "regexes": ["\\bfor\\b\\s+\\w+\\s+\\bin\\b"],
+          "points": 0,
+          "warn_only": true,
+          "warn_message": "No for loop detected."
+        },
+        {
+          "field": "list or dict usage",
+          "regexes": ["\\[|\\{|append|dict|list"],
+          "points": 0,
+          "warn_only": true,
+          "warn_message": "No list or dictionary detected."
+        }
+      ],
+      "test_cases": [
+        {
+          "label": "4 ratings with average",
+          "inputs": "4\nAlice\n9\nBob\n6\nCarol\n8\nDave\n3\n",
+          "expected_output": "(?i)(average|avg|mean).*\\d",
+          "points": 3,
+          "type": "output_check"
+        },
+        {
+          "label": "highest rating in output",
+          "inputs": "4\nAlice\n9\nBob\n6\nCarol\n8\nDave\n3\n",
+          "expected_output": "(?i)(high|max|best|top).*(?:alice|9)",
+          "points": 3,
+          "type": "output_check"
+        },
+        {
+          "label": "runs with 1 response",
+          "inputs": "1\nEve\n7\n",
+          "expected_output": ".+",
+          "points": 2,
+          "type": "output_check"
+        }
+      ]
+    },
+    "Workout Log": {
+      "content_checks": [
+        {
+          "field": "I/P/O comment block",
+          "regexes": [
+            "'''[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*'''",
+            "\"\"\"[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*\"\"\""
+          ],
+          "points": 3
+        },
+        {
+          "field": "for loop present",
+          "regexes": ["\\bfor\\b\\s+\\w+\\s+\\bin\\b"],
+          "points": 0,
+          "warn_only": true,
+          "warn_message": "No for loop detected."
+        },
+        {
+          "field": "list or dict usage",
+          "regexes": ["\\[|\\{|append|dict|list"],
+          "points": 0,
+          "warn_only": true,
+          "warn_message": "No list or dictionary detected."
+        }
+      ],
+      "test_cases": [
+        {
+          "label": "3 workouts with total calories",
+          "inputs": "3\nRunning\n30\n300\nCycling\n45\n400\nYoga\n60\n200\n",
+          "expected_output": "(?i)(total|sum|calories|burned).*\\d",
+          "points": 3,
+          "type": "output_check"
+        },
+        {
+          "label": "longest workout in output",
+          "inputs": "3\nRunning\n30\n300\nCycling\n45\n400\nYoga\n60\n200\n",
+          "expected_output": "(?i)(long|max|great|most).*(?:yoga|60)",
+          "points": 3,
+          "type": "output_check"
+        },
+        {
+          "label": "runs with 1 workout",
+          "inputs": "1\nWalking\n20\n100\n",
+          "expected_output": ".+",
+          "points": 2,
+          "type": "output_check"
+        }
+      ]
+    },
+    "Order Processor": {
+      "content_checks": [
+        {
+          "field": "I/P/O comment block",
+          "regexes": [
+            "'''[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*'''",
+            "\"\"\"[\\s\\S]*inputs[\\s\\S]*processes[\\s\\S]*outputs[\\s\\S]*\"\"\""
+          ],
+          "points": 3
+        },
+        {
+          "field": "for loop present",
+          "regexes": ["\\bfor\\b\\s+\\w+\\s+\\bin\\b"],
+          "points": 0,
+          "warn_only": true,
+          "warn_message": "No for loop detected."
+        },
+        {
+          "field": "list or dict usage",
+          "regexes": ["\\[|\\{|append|dict|list"],
+          "points": 0,
+          "warn_only": true,
+          "warn_message": "No list or dictionary detected."
+        }
+      ],
+      "test_cases": [
+        {
+          "label": "3 orders with total revenue",
+          "inputs": "3\nAlice\n49.99\nshipped\nBob\n125.00\npending\nCarol\n75.50\nshipped\n",
+          "expected_output": "(?i)(total|revenue|sum|sales).*\\d",
+          "points": 3,
+          "type": "output_check"
+        },
+        {
+          "label": "largest order in output",
+          "inputs": "3\nAlice\n49.99\nshipped\nBob\n125.00\npending\nCarol\n75.50\nshipped\n",
+          "expected_output": "(?i)(larg|big|max|high).*(?:bob|125)",
+          "points": 3,
+          "type": "output_check"
+        },
+        {
+          "label": "runs with 1 order",
+          "inputs": "1\nDave\n30.00\nshipped\n",
+          "expected_output": ".+",
+          "points": 2,
+          "type": "output_check"
+        }
+      ]
+    }
+  }
+}
