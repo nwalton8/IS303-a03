@@ -7,15 +7,13 @@ Collects student scores and produces a grade summary
 Accumulate total, find highest/lowest score, count scores above a threshold
 
 Inputs:
-- Number of students
-- Student names and their scores
+- Student name and list of their scores
 
 Processes:
-- Calculate total score
-- Find highest score
-- Find lowest score
-- Count scores above threshold
-- Clean the input names (remove extra spaces, capitalize)
+- Accumulator: Calculate total score
+- Min/Max: Find highest and lowest scores
+- Accumulator: Count scores above threshold
+- Transform: Clean the input names (remove extra spaces, capitalize)
 
 Outputs:
 - Total score

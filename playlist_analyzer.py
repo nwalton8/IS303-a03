@@ -14,6 +14,7 @@ Processes:
 - Min/Max: Find the longest song
 - Filter: Filter songs by genre
 - Accumulator: Count songs over/under a specified duration
+- Transform: Clean the input data (strip spaces, title case)
 
 Outputs:
 - Name of Playlist with total playtime
