@@ -7,8 +7,8 @@ Collects student scores and produces a grade summary
 Accumulate total, find highest/lowest score, count scores above a threshold
 
 Inputs:
-Number of students
-Student names and their scores
+- Number of students
+- Student names and their scores
 
 Processes:
 - Calculate total score
