@@ -22,7 +22,7 @@ Outputs:
 - Count of songs over/under a specified duration
 - List of songs and their details filtered by genre
 '''
-#Inputs:
+# Inputs:
 playlist_name = input("Enter the name of the playlist: ").strip().title()
 playlist = [
 ]
@@ -41,7 +41,7 @@ if not playlist:
     print("No songs in the playlist.")
     exit()
 
-#processes:
+# Processes:
 total_playtime = 0
 longest_song = playlist[0]   # Initialize to the first song in the playlist
 filtered_songs = [
@@ -59,7 +59,7 @@ for song in playlist:
     else:
         under_threshold_count += 1
 
-#Outputs:
+# Outputs:
 print(f"\nThe playlist, {playlist_name}, has a total playtime of {total_playtime} seconds.")
 print(f"The longest song is '{longest_song['title']}' by {longest_song['artist']} with a duration of {longest_song['duration']} seconds.")
 print(f"Number of songs over the threshold of {duration_threshold} seconds: {over_threshold_count}")
@@ -68,4 +68,4 @@ print(f"Filtered songs by genre '{genre_filter}':")
 for song in filtered_songs:
     print(f"  - {song['title']} by {song['artist']} ({song['duration']} seconds)")
 
-#End of playlist_analyzer.py
+# End of program
